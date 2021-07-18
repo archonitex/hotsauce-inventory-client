@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: '//volamtarpeppers.wrclan.ca' + (window.location.protocol === 'https:' ? ':3001' : ':3000') + '/api',
+    baseURL: '//volamtarpeppers.wrclan.ca' + (window.location.protocol === 'https:' ? ':5100' : ':5000') + '/api',
 })
 
 export const loginUser = payload => api.post('/login', payload)

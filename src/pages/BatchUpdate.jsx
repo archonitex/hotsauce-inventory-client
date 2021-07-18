@@ -131,7 +131,7 @@ class BatchUpdate extends Component {
         const data = new FormData() 
         data.append('file', event.target.files[0])
 
-        let baseURL = '//volamtarpeppers.wrclan.ca' + (window.location.protocol === 'https:' ? ':3001' : ':3000') + '/api'
+        let baseURL = '//volamtarpeppers.wrclan.ca' + (window.location.protocol === 'https:' ? ':5100' : ':5000') + '/api'
         axios.post(baseURL + "/upload", data, {})
     }
 
