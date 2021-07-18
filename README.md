@@ -1,0 +1,2 @@
+# hotsauce-inventory-client
+ 
