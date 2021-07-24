@@ -93,7 +93,7 @@ class BatchUpdate extends Component {
             ingredients: [],
             stock: 0,
             price: 0,
-            imageName: '',
+            imageName: undefined,
             storeDescription: '',
             status: true,
         }
@@ -183,7 +183,7 @@ class BatchUpdate extends Component {
             ingredients: batch.data.data.ingredients || [],
             stock: batch.data.data.stock || 0,
             price: batch.data.data.price || 0,
-            imageName: '',
+            imageName: undefined,
             storeDescription: batch.data.data.storeDescription || '',
             status: batch.data.data.status
         })
