@@ -58,11 +58,13 @@ function App() {
                 },
                 {
                     icon: (
+                        <div>
                         <a href="https://instagram.com/francis_carriere">
-                        <span styles="font-size: 1.5rem;"> <span styles="color: indianred;"> <i class="fab fa-instagram"></i> </span></span>
+                        <span styles="font-size: 1.5rem;"> <span styles="color: indianred;"> <i class="fab fa-instagram"> francis_carriere</i> </span></span>
                         </a>
+                        </div>
                     ),
-                    title: 'francis_carriere',
+                    title: ' ',
                     url: 'https://instagram.com/francis_carriere',
                     description: 'Follow us on Instagram',
                     openExternal: true
