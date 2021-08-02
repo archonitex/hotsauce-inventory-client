@@ -58,7 +58,7 @@ function App() {
                 },
                 {
                     icon: (
-                        <div>
+                        <div class="insta-channel">
                         <a href="https://instagram.com/francis_carriere">
                         <span styles="font-size: 1.5rem;"> <span styles="color: indianred;"> <i class="fab fa-instagram"> francis_carriere</i> </span></span>
                         </a>
