@@ -13,6 +13,7 @@ import '../style/index.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import ReactGA from 'react-ga';
+import { Fragment } from 'react'
 
 const TRACKING_ID = "G-WHT97CVBB9"; // YOUR_OWN_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
@@ -49,8 +50,25 @@ function App() {
                     description: 'Hot Sauce & Pepper Products',
                     openExternal: true,
                 },
+                {
+                    icon: (
+                        <div class="yt-channel"><div class="g-ytsubscribe" data-channelid="UCsJlFiPiiLKcpqUrjXDF3AA" data-layout="default" data-theme="dark" data-count="hidden"></div></div>
+                    ),
+                    openExternal: true
+                },
+                {
+                    icon: (
+                        <a href="https://instagram.com/francis_carriere">
+                        <span styles="font-size: 1.5rem;"> <span styles="color: indianred;"> <i class="fab fa-instagram"></i> </span></span>
+                        </a>
+                    ),
+                    title: 'francis_carriere',
+                    url: 'https://instagram.com/francis_carriere',
+                    description: 'Follow us on Instagram',
+                    openExternal: true
+                },
                 ]}
-                bottom="Made with 🌶️❤️ by Francis Carriere"
+                bottom="Made with 🌶️ ❤️ by Francis Carriere"
             />
         </Router>
     )

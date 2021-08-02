@@ -30,14 +30,14 @@ class Links extends Component {
 
         return (
             <React.Fragment>
-                <Link to="/" className="navbar-brand">
+                <Link to="/" className="navbar-brand navbar-name">
                     Volamtar Peppers
                 </Link>
                 <Collapse>
                     <List>
                         <Item>
                             <Link to="/" className="nav-link">
-                                Order
+                                Products
                             </Link>
                             <Link to="/batches" className="nav-link">
                                 Manage

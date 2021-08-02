@@ -8,3 +8,4 @@ import './bulma-override.css';
 import './Product.css';
 import './Toggle.css';
 import './Tab-override.css';
+import './Navbar.css';
