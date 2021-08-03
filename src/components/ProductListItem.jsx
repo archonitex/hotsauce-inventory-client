@@ -71,19 +71,26 @@ const ProductListItem = props => {
               </button>
               
               {product.stock > 0 ? (
-                <button
-                className="button is-small is-outlined is-primary   is-pulled-right"
-                onClick={() => {
-                    if(document.getElementsByClassName('Collapsible__trigger is-closed').length > 0){
-                      document.getElementsByClassName('Collapsible__trigger')[0].dispatchEvent(new MouseEvent("click",{bubbles: true, cancellable: true}));
-                    }
-
-                    var elmnt = document.getElementsByClassName('Collapsible__trigger')[0]
-                    elmnt.scrollIntoView();
-                  }}
-              >
-                Request Now
-              </button>
+                <div className="paypalBuyButton is-pulled-right">
+                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="business" value="7D77NDD25ZQCS" />
+                    <input type="hidden" name="lc" value="CA" />
+                    <input type="hidden" name="item_name" value={product.name} />
+                    <input type="hidden" name="item_number" value={product.id} />
+                    <input type="hidden" name="amount" value={product.price} />
+                    <input type="hidden" name="currency_code" value="CAD" />
+                    <input type="hidden" name="button_subtype" value="products" />
+                    <input type="hidden" name="no_note" value="0" />
+                    <input type="hidden" name="cn" value="Add special instructions :" />
+                    <input type="hidden" name="no_shipping" value="2" />
+                    <input type="hidden" name="shipping" value="7.50" />
+                    <input type="hidden" name="add" value="1" />
+                    <input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHosted" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
               ) : (<div></div>)}
               
             </div>
