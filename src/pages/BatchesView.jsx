@@ -41,6 +41,12 @@ class BatchesView extends Component {
                 <Fragment>
                     <ContactForm />
                 </Fragment>
+                <Fragment>
+                    <h6 style={{'padding':'15px 15px 0px 15px'}}>
+                    ❗ 🚚 We offer local pickup in Clarence-Rockland! Delivery / shipping is available on special occasion. Contact us for more info!
+                    </h6>
+                </Fragment>
+                
                 <div className="container">
                     <div className="column columns is-multiline">
                     {batches && batches.length ? (
