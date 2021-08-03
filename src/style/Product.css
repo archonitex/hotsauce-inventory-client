@@ -14,3 +14,7 @@
 .paypalBuyButton {
     margin-top: 22px;
 }
+
+.paypalCart {
+    display: none;
+}
