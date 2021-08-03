@@ -84,7 +84,7 @@ const ProductListItem = props => {
                     <input type="hidden" name="no_note" value="0" />
                     <input type="hidden" name="cn" value="Add special instructions :" />
                     <input type="hidden" name="no_shipping" value="2" />
-                    <input type="hidden" name="shipping" value="7.50" />
+                    <input type="hidden" name="shipping" value="0" />
                     <input type="hidden" name="add" value="1" />
                     <input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHosted" />
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
