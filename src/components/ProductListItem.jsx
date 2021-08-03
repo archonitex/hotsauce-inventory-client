@@ -37,7 +37,7 @@ const ProductListItem = props => {
         <div className="media">
           <div className="media-left">
             <figure className="image is-128x128">
-              <img
+              <img className="product list-image"
                 src={product.imageUrl}
                 alt={product.name}
               />
