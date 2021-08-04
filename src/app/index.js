@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { NavBar } from '../components'
-import { BatchesHome, BatchesList, BatchesView, BatchInsert, BatchUpdate, ProductView } from '../pages'
+import { BatchesHome, BatchesList, BatchesView, BatchInsert, BatchUpdate, ProductView, PurchaseSuccess } from '../pages'
 
 import logo from '../logo-white.png'
 
@@ -37,6 +37,7 @@ function App() {
                     exact
                     component={ProductView}
                 />
+                <Route path="/success" exact component={PurchaseSuccess} />
             </Switch>
             <Footer
                 backgroundColor='#343a40'

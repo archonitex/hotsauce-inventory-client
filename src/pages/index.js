@@ -6,4 +6,6 @@ import BatchesView from './BatchesView'
 
 import ProductView from './ProductView'
 
-export { BatchesHome, BatchesList, BatchInsert, BatchUpdate, BatchesView, ProductView }
+import PurchaseSuccess from './PurchaseSuccess'
+
+export { BatchesHome, BatchesList, BatchInsert, BatchUpdate, BatchesView, ProductView, PurchaseSuccess }
