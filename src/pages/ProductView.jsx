@@ -134,6 +134,12 @@ class ProductView extends Component {
 
                                 </IngredientList>
                             </Tab>
+                            { product.videoUrl && product.videoUrl !== '' ? (
+                                <Tab eventKey="video" title="Video">
+                                    <a href={product.videoUrl} target="_">Watch On YouTube</a>
+                                </Tab>
+                            ) : (<div></div>)}
+                            
                         </Tabs>
                     </RightContainerItem>
                 </Container>

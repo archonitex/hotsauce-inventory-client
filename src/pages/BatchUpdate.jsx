@@ -94,6 +94,7 @@ class BatchUpdate extends Component {
             stock: 0,
             price: 0,
             imageName: undefined,
+            videoUrl: '',
             storeDescription: '',
             status: true,
         }
@@ -107,6 +108,11 @@ class BatchUpdate extends Component {
     handleChangeInputNotes = async event => {
         const notes = event.target.value
         this.setState({ notes })
+    }
+
+    handleChangeVideoUrl =  async event => {
+        const videoUrl = event.target.value
+        this.setState({ videoUrl })
     }
 
     handleChangeInputStoreDescription = async event => {
@@ -160,8 +166,8 @@ class BatchUpdate extends Component {
     }
 
     handleUpdateBatch = async () => {
-        const { id, name, date, notes, ingredients, heat, stock, price, imageName, status, storeDescription} = this.state
-        var payload = { name, date, notes, ingredients, heat, stock, price, imageName, status, storeDescription }        
+        const { id, name, date, notes, ingredients, heat, stock, price, imageName, status, storeDescription, videoUrl} = this.state
+        var payload = { name, date, notes, ingredients, heat, stock, price, imageName, status, storeDescription, videoUrl }        
 
         await api.updateBatchById(id, payload).then(res => {
             window.location = '/batches'
@@ -184,13 +190,14 @@ class BatchUpdate extends Component {
             stock: batch.data.data.stock || 0,
             price: batch.data.data.price || 0,
             imageName: undefined,
+            videoUrl: batch.data.data.videoUrl || '',
             storeDescription: batch.data.data.storeDescription || '',
             status: batch.data.data.status
         })
     }
 
     render() {
-        const { name, date, notes, heat, stock, price, status, storeDescription } = this.state
+        const { name, date, notes, heat, stock, price, status, storeDescription, videoUrl } = this.state
         
         if(!isAllowed(PERMISSIONS.CAN_EDIT_BATCHED)){
             return (
@@ -279,11 +286,22 @@ class BatchUpdate extends Component {
                             </Col>
                         </Row>     
                         <Row>
-                            <Col xs={6} >
+                            <Col xs={4} >
                                 <h6>Image</h6>
                                 <input type="file" onChange={this.handleChangeImage}/>
                             </Col>
                         </Row>  
+                        <Row>
+                            <Col xs={10} >
+                                <h6>Video URL</h6>
+                                <InputText
+                                    type="text"
+                                    placeholder="https://youtube.com/..."
+                                    value={videoUrl}
+                                    onChange={this.handleChangeVideoUrl}
+                                />
+                            </Col>
+                        </Row>
                         <Row>
                             <Col xs={10} >
                                 <h6>Description</h6>

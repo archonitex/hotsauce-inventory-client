@@ -88,6 +88,7 @@ class BatchInsert extends Component {
             name: '',
             date: dateString,
             notes: '',
+            videoUrl: '',
             imageName: '',
             stock: 0,
             price: 0,
@@ -106,6 +107,11 @@ class BatchInsert extends Component {
     handleChangeInputNotes = async event => {
         const notes = event.target.value
         this.setState({ notes: notes })
+    }
+
+    handleChangeInputVideoUrl = async event => {
+        const url = event.target.value
+        this.setState({ videoUrl: url}) 
     }
 
     handleChangeInputStoreDescription = async event => {
@@ -174,7 +180,7 @@ class BatchInsert extends Component {
     }
 
     render() {
-        const { name, date, notes, price, stock, imageUrl, status } = this.state
+        const { name, date, notes, price, stock, imageUrl, status, videoUrl } = this.state
         return (
             <Wrapper>
                 <Collapsible trigger="Create Batch">
@@ -249,10 +255,21 @@ class BatchInsert extends Component {
                             </Col>
                         </Row>     
                         <Row>
-                            <Col xs={6} >
+                            <Col xs={4} >
                                 <h6>Image</h6>
                                 <input type="file" onChange={this.handleChangeImage}/>
                             </Col>
+                        </Row>
+                        <Row>
+                            <Col xs={10} >
+                                <h6>Video URL</h6>
+                                <InputText
+                                    type="text"
+                                    placeholder="https://youtube.com/..."
+                                    value={videoUrl}
+                                    onChange={this.handleChangeInputVideoUrl}
+                                />
+                            </Col>   
                         </Row>  
                         <Row>
                             <Col xs={10} >

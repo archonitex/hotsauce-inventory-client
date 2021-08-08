@@ -74,6 +74,7 @@
     "react-table-6": "^6.11.0",
     "react-toggle": "^4.1.2",
     "react-uuid": "^1.0.2",
+    "reactjs-popup": "^2.0.5",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
