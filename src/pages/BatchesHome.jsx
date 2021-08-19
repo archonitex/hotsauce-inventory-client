@@ -16,22 +16,12 @@ const Wrapper = styled.div.attrs({
     margin: 0 30px;
 `
 
-const Button = styled.button.attrs({
-    className: `btn btn-primary`,
-})`
-    margin: 5px 5px 5px 5px;
-    width: 15%;
-`
-
-const ButtonSecondary = styled.button.attrs({
+const SyncButton = styled.button.attrs({
     className: `btn btn-secondary`,
 })`
     margin: 5px 5px 5px 5px;
-    width: 15%;
-`
-
-const Label = styled.label`
-    margin: 5px;
+    font-weight: 700;
+    font-size: 14px;
 `
 
 class BatchesHome extends Component {
@@ -52,8 +42,9 @@ class BatchesHome extends Component {
         event.target.innerHTML = "Uploading..."
 
         await api.uploadBatchesWoo().then(res => {
-            event.target.disabled = false
             event.target.innerHTML = oldInnerHTML
+
+            this.updateWoo(event)
         })
     }
 
@@ -99,9 +90,8 @@ class BatchesHome extends Component {
                 <React.Fragment>
                     <BatchInsert />
                     <div>
-                        <Button onClick={this.uploadWoo}>⬆ To WooCommerce</Button>
-                        <ButtonSecondary onClick={this.updateWoo}>Update WooCommerce</ButtonSecondary>
-                        <ButtonSecondary onClick={this.downloadWoo}>⬇ From WooCommerce</ButtonSecondary>
+                        <SyncButton onClick={this.uploadWoo}>⬆ Upload</SyncButton>
+                        <SyncButton onClick={this.downloadWoo}>⬇ Download</SyncButton>
                     </div>
                 <Title>Batches</Title>
                     <BatchesList />

@@ -124,12 +124,6 @@ class BatchesList extends Component {
                 Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value}</div>
             },
             {
-                Header: 'Date',
-                accessor: 'date',
-                filterable: true,
-                Cell: ({ value }) => <div style={{ textAlign: "center" }}>{moment(value).format('ll')}</div>
-            },
-            {
                 Header: 'Stock',
                 accessor: 'stock',
                 filterable: false,

@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import DateInput from 'react-input-date'
 import api from '../api'
 import moment from 'moment';
 import Collapsible from 'react-collapsible';
 import { Grid, Row, Col } from "react-flexbox-grid";
 import ReactSlider from 'react-slider'
 import Toggle from 'react-toggle'
-import ImageUploader from 'react-images-upload';
 import axios from 'axios';
 
 
@@ -81,12 +79,8 @@ class BatchInsert extends Component {
     constructor(props) {
         super(props)
 
-        var now = new Date();
-		var dateString = moment(now).format('DD-MM-YYYY');
-
         this.state = {
             name: '',
-            date: dateString,
             notes: '',
             videoUrl: '',
             imageName: '',
@@ -117,10 +111,6 @@ class BatchInsert extends Component {
     handleChangeInputStoreDescription = async event => {
         const storeDescription = event.target.value
         this.setState({ storeDescription: storeDescription })
-    }
-
-    handleChangeInputDate = (newDate) => {
-        this.setState({ date: newDate })
     }
 
     handleChangePrice = async event => {
@@ -161,8 +151,8 @@ class BatchInsert extends Component {
     }
 
     handleIncludeBatch = async () => {
-        const { name, date, notes, ingredients, heat, imageName, stock, price, status, storeDescription } = this.state
-        const payload = { name, date, notes, ingredients, heat, imageName, stock, price, status, storeDescription }
+        const { name, notes, ingredients, heat, imageName, stock, price, status, storeDescription } = this.state
+        const payload = { name, notes, ingredients, heat, imageName, stock, price, status, storeDescription }
 
         await api.insertBatch(payload).then(res => {
             window.location.reload();
@@ -180,7 +170,7 @@ class BatchInsert extends Component {
     }
 
     render() {
-        const { name, date, notes, price, stock, imageUrl, status, videoUrl } = this.state
+        const { name, notes, price, stock, imageUrl, status, videoUrl } = this.state
         return (
             <Wrapper>
                 <Collapsible trigger="Create Batch">
@@ -195,15 +185,6 @@ class BatchInsert extends Component {
                                     value={name}
                                     onChange={this.handleChangeInputName}
                                     onKeyDown={this.handleKeyDown}
-                                />
-                            </Col>
-                            <Col xs={2} >
-                                <h6>Batch Date</h6>
-                                <DateInput
-                                    date={date}
-                                    format='DDMMYYYY'
-                                    separator='-'
-                                    onChange={this.handleChangeInputDate}
                                 />
                             </Col>
                             <Col xs={3} >

@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import DateInput from 'react-input-date'
 import api from '../api'
-import moment from 'moment';
-import Collapsible from 'react-collapsible';
 import { Grid, Row, Col } from "react-flexbox-grid";
 import ReactSlider from 'react-slider'
 import { isAllowed, PERMISSIONS } from '../auth/auth';
@@ -81,13 +78,9 @@ class BatchUpdate extends Component {
     constructor(props) {
         super(props)
 
-        var now = new Date();
-		var dateString = moment(now).format('DD-MM-YYYY');
-
         this.state = {
             id: this.props.match.params.id,
             name: '',
-            date: dateString,
             notes: '',
             heat: 0,
             ingredients: [],
@@ -118,10 +111,6 @@ class BatchUpdate extends Component {
     handleChangeInputStoreDescription = async event => {
         const storeDescription = event.target.value
         this.setState({ storeDescription })
-    }
-
-    handleChangeInputDate = (newDate) => {
-        this.setState({ date: newDate })
     }
 
     handleChangeImage = async event => {
@@ -166,8 +155,8 @@ class BatchUpdate extends Component {
     }
 
     handleUpdateBatch = async () => {
-        const { id, name, date, notes, ingredients, heat, stock, price, imageName, status, storeDescription, videoUrl} = this.state
-        var payload = { name, date, notes, ingredients, heat, stock, price, imageName, status, storeDescription, videoUrl }        
+        const { id, name, notes, ingredients, heat, stock, price, imageName, status, storeDescription, videoUrl} = this.state
+        var payload = { name, notes, ingredients, heat, stock, price, imageName, status, storeDescription, videoUrl }        
 
         await api.updateBatchById(id, payload).then(res => {
             window.location = '/batches'
@@ -178,12 +167,8 @@ class BatchUpdate extends Component {
         const { id } = this.state
         const batch = await api.getBatchById(id)
 
-        var now = new Date();
-		var dateString = moment(now).format('DD-MM-YYYY');
-
         this.setState({
             name: batch.data.data.name,
-            date: dateString,
             notes: batch.data.data.notes || '',
             heat: batch.data.data.heat || 0,
             ingredients: batch.data.data.ingredients || [],
@@ -197,7 +182,7 @@ class BatchUpdate extends Component {
     }
 
     render() {
-        const { name, date, notes, heat, stock, price, status, storeDescription, videoUrl } = this.state
+        const { name, notes, heat, stock, price, status, storeDescription, videoUrl } = this.state
         
         if(!isAllowed(PERMISSIONS.CAN_EDIT_BATCHED)){
             return (
@@ -226,15 +211,6 @@ class BatchUpdate extends Component {
                                     value={name}
                                     onChange={this.handleChangeInputName}
                                     onKeyDown={this.handleKeyDown}
-                                />
-                            </Col>
-                            <Col xs={2} >
-                                <h6>Batch Date</h6>
-                                <DateInput
-                                    date={date}
-                                    format='DDMMYYYY'
-                                    separator='-'
-                                    onChange={this.handleChangeInputDate}
                                 />
                             </Col>
                             <Col xs={3} >
