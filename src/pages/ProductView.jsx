@@ -130,7 +130,7 @@ class ProductView extends Component {
                                                 {ingredient.ingredient}
                                             </IngredientItem>
                                         ))
-                                    ) : (<li>No ingredients found.</li>)}
+                                    ) : (<li key="noIngredient">No ingredients found.</li>)}
 
                                 </IngredientList>
                             </Tab>

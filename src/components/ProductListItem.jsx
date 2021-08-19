@@ -24,7 +24,7 @@ const ProductListItem = props => {
   }
 
   var offHeatString = '&nbsp;'
-  for (var i=numberOfPeppers; i<5; i++){
+  for (var j=numberOfPeppers; j<5; j++){
     offHeatString += "🌶️"
   }
 
@@ -62,7 +62,7 @@ const ProductListItem = props => {
             )}
             <div className="is-clearfix">
               <button
-                class="button is-small is-outlined is-primary   is-pulled-left"
+                className="button is-small is-outlined is-primary   is-pulled-left"
                 onClick={() =>{
                   window.location = "/product/" + product._id
                 }}

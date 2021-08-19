@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import api from '../api'
-import moment from 'moment';
 import Collapsible from 'react-collapsible';
 import { Grid, Row, Col } from "react-flexbox-grid";
 import ReactSlider from 'react-slider'
 import Toggle from 'react-toggle'
 import axios from 'axios';
-
 
 import styled from 'styled-components'
 import IngredientTable from '../components/IngredientTable';

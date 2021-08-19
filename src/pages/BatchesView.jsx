@@ -2,10 +2,6 @@ import React, { Component, Fragment } from 'react'
 import api from '../api'
 import ProductListItem from "../components/ProductListItem";
 import ContactForm from "../components/ContactForm";
-import moment from 'moment';
-
-import ReactTable from "react-table-6"
-import "react-table-6/react-table.css"
 
 import styled from 'styled-components'
 
@@ -38,15 +34,6 @@ class BatchesView extends Component {
 
         return (
             <Wrapper>
-                <Fragment>
-                    <ContactForm />
-                </Fragment>
-                <Fragment>
-                    <h6 style={{'padding':'15px 15px 0px 15px'}}>
-                    ❗ 🚚 We offer local pickup in Clarence-Rockland! Delivery / shipping is available on special occasion. Contact us for more info!
-                    </h6>
-                </Fragment>
-                
                 <div className="container">
                     <div className="column columns is-multiline">
                     {batches && batches.length ? (

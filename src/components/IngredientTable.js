@@ -28,20 +28,24 @@ class IngredientTable extends React.Component {
 
     componentDidMount = async () => {        
         const id = this.props.batchId
-        var batch = await api.getBatchById(id)
         
-        //Convert _id to id
-        var batchIngredients = batch.data.data.ingredients
-        var i;
-        for(i = 0; i < batchIngredients.length; i++){
-            batchIngredients[i].id = batchIngredients[i]['_id'];
-            delete batchIngredients[i]._id;
-        }
+        //If existing batch, load ingredients
+        if(id){
+            var batch = await api.getBatchById(id)
+        
+            //Convert _id to id
+            var batchIngredients = batch.data.data.ingredients
+            var i;
+            for(i = 0; i < batchIngredients.length; i++){
+                batchIngredients[i].id = batchIngredients[i]['_id'];
+                delete batchIngredients[i]._id;
+            }
 
-        this.setState({
-            rows: batchIngredients
-        })
-        this.props.onIngredientsChange(batchIngredients)
+            this.setState({
+                rows: batchIngredients
+            })
+            this.props.onIngredientsChange(batchIngredients)
+        }
     }
 
     addRow = async event => {
@@ -89,13 +93,15 @@ class IngredientTable extends React.Component {
         return (
             <div>
                 <table>
-                    {this.state.rows.map((r) => (
-                      <tr>
-                          <td id={r.id}> <IngredientAutoSuggest id={r.id} value={r.ingredient} onIngredientChange={this.handleChangeIngredientName}/> </td>
-                          <td id={r.id}> <InputText id={r.id} type="text" value={r.quantity} placeholder='Qty' onChange={this.handleChangeIngredientQuantity}></InputText> </td>
-                          <td id={r.id}> <button class="btn" onClick={this.removeRow}>💣</button> </td>
-                      </tr>
-                    ))}
+                    <tbody>
+                        {this.state.rows.map((r) => (
+                        <tr>
+                            <td id={r.id}> <IngredientAutoSuggest id={r.id} value={r.ingredient} onIngredientChange={this.handleChangeIngredientName}/> </td>
+                            <td id={r.id}> <InputText id={r.id} type="text" value={r.quantity} placeholder='Qty' onChange={this.handleChangeIngredientQuantity}></InputText> </td>
+                            <td id={r.id}> <button className="btn" onClick={this.removeRow}>💣</button> </td>
+                        </tr>
+                        ))}
+                    </tbody>
                 </table>
                 <Button onClick={this.addRow} >Add Ingredient</Button>
             </div>
