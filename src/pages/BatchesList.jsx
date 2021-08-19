@@ -142,6 +142,12 @@ class BatchesList extends Component {
                 Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value == true ? "✅" : "🛑"}</div>
             },
             {
+                Header: 'WooCommerce',
+                accessor: 'storeId',
+                filterable: false,
+                Cell: ({ value }) => <div style={{ textAlign: "center" }}>{value !== undefined ? "🌎" : ""}</div>
+            },
+            {
                 Header: 'Actions',
                 accessor: '',
                 Cell: function(props) {
