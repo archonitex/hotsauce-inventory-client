@@ -14,8 +14,13 @@ export const deleteBatchById = id => api.delete(`/batch/${id}`)
 export const getBatchById = id => api.get(`/batch/${id}`)
 export const printBatchById = (id, payload) => api.post(`/batch/${id}/print`, payload)
 
+export const uploadBatchesWoo = () => api.post('/batches/woocommerce')
+export const updateBatchesWoo = () => api.put('/batches/woocommerce')
+export const downloadBatchesWoo = () => api.get('/batches/woocommerce')
+
 export const getIngredients = () => api.get(`/ingredients`)
 export const insertIngredient = payload => api.post(`ingredient`, payload)
+
 
 export const contactRequest = payload => api.post('/contact', payload)
 
@@ -29,6 +34,10 @@ const apis = {
     deleteBatchById,
     getBatchById,
     printBatchById,
+
+    uploadBatchesWoo,
+    downloadBatchesWoo,
+    updateBatchesWoo,
 
     getIngredients,
     insertIngredient,
