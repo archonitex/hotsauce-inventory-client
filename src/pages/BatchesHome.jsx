@@ -69,6 +69,8 @@ class BatchesHome extends Component {
         await api.downloadBatchesWoo().then(res => {
             event.target.disabled = false
             event.target.innerHTML = oldInnerHTML
+
+            window.location.reload();
         })
     }
 
