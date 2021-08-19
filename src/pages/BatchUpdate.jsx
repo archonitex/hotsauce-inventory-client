@@ -286,23 +286,6 @@ class BatchUpdate extends Component {
                             </Col>
                         </Row>     
                         <Row>
-                            <Col xs={4} >
-                                <h6>Image</h6>
-                                <input type="file" onChange={this.handleChangeImage}/>
-                            </Col>
-                        </Row>  
-                        <Row>
-                            <Col xs={10} >
-                                <h6>Video URL</h6>
-                                <InputText
-                                    type="text"
-                                    placeholder="https://youtube.com/..."
-                                    value={videoUrl}
-                                    onChange={this.handleChangeVideoUrl}
-                                />
-                            </Col>
-                        </Row>
-                        <Row>
                             <Col xs={10} >
                                 <h6>Description</h6>
                                 <InputTextArea placeholder="Description" value={storeDescription} onChange={this.handleChangeInputStoreDescription} />
