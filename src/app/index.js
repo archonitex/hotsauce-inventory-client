@@ -50,25 +50,6 @@ function App() {
                     description: 'Hot Sauce & Pepper Products',
                     openExternal: true,
                 },
-                {
-                    icon: (
-                        <div className="yt-channel"><div className="g-ytsubscribe" data-channelid="UCsJlFiPiiLKcpqUrjXDF3AA" data-layout="default" data-theme="dark" data-count="hidden"></div></div>
-                    ),
-                    openExternal: true
-                },
-                {
-                    icon: (
-                        <div className="insta-channel">
-                        <a href="https://instagram.com/francis_carriere">
-                        <span styles="font-size: 1.5rem;"> <span styles="color: indianred;"> <i className="fab fa-instagram"> francis_carriere</i> </span></span>
-                        </a>
-                        </div>
-                    ),
-                    title: ' ',
-                    url: 'https://instagram.com/francis_carriere',
-                    description: 'Follow us on Instagram',
-                    openExternal: true
-                },
                 ]}
                 bottom="Made with 🌶️ ❤️ by Francis Carriere"
             />

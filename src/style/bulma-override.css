@@ -9,6 +9,10 @@
     box-shadow: 5px 7px 10px #778899;
 }
 
+.ktqjit {
+    margin: 0 !important;
+}
+
 .tag:not(body).is-primary {
     background-color: #fc8c03;
     color: #fff;
