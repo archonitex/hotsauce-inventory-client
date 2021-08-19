@@ -101,7 +101,7 @@ class BatchesHome extends Component {
                     <div>
                         <Button onClick={this.uploadWoo}>⬆ To WooCommerce</Button>
                         <ButtonSecondary onClick={this.updateWoo}>Update WooCommerce</ButtonSecondary>
-                        <ButtonSecondary onClick={this.downloadWoo}>⬇ WooCommerce(SKU)</ButtonSecondary>
+                        <ButtonSecondary onClick={this.downloadWoo}>⬇ From WooCommerce</ButtonSecondary>
                     </div>
                 <Title>Batches</Title>
                     <BatchesList />
