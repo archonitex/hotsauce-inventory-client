@@ -69,33 +69,6 @@ const ProductListItem = props => {
               >
               More Info
               </button>
-              
-              {product.stock > 0 ? (
-                <div className="paypalBuyButton is-pulled-right">
-                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="business" value="7D77NDD25ZQCS" />
-                    <input type="hidden" name="lc" value="CA" />
-                    <input type="hidden" name="item_name" value={product.name} />
-                    <input type="hidden" name="item_number" value={product.id} />
-                    <input type="hidden" name="amount" value={product.price} />
-                    <input type="hidden" name="currency_code" value="CAD" />
-                    <input type="hidden" name="button_subtype" value="products" />
-                    <input type="hidden" name="no_note" value="0" />
-                    <input type="hidden" name="cn" value="Add special instructions :" />
-                    <input type="hidden" name="no_shipping" value="1" />
-                    <input type="hidden" name="shipping" value="0" />
-                    <input type="hidden" name="rm" value="1" />
-                    <input type="hidden" name="return" value="https://volamtarpeppers.wrclan.ca/success" />
-                    <input type="hidden" name="cancel_return" value="https://volamtarpeppers.wrclan.ca" />
-                    <input type="hidden" name="add" value="1" />
-                    <input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHosted" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                    </form>
-                </div>
-              ) : (<div></div>)}
-              
             </div>
           </div>
         </div>
