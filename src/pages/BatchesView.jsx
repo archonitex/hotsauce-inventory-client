@@ -21,12 +21,13 @@ class BatchesView extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true })
 
-        await api.getActiveBatches().then(batches => {
-            this.setState({
-                batches: batches.data.data,
-                isLoading: false,
-            })
-        })
+        window.location.href = "https://www.volamtar.com";
+        // await api.getActiveBatches().then(batches => {
+        //     this.setState({
+        //         batches: batches.data.data,
+        //         isLoading: false,
+        //     })
+        // })
     }
 
     render() {
