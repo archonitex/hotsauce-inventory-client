@@ -91,7 +91,7 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "PORT=8000 HTTPS=true SSL_CRT_FILE=~/letsencrypt/config/live/volamtarpeppers.wrclan.ca/fullchain.pem SSL_KEY_FILE=~/letsencrypt/config/live/volamtarpeppers.wrclan.ca/privkey.pem node scripts/start.js",
+    "start": "PORT=8000 node scripts/start.js",
     "start-dev": "PORT=8000 node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
